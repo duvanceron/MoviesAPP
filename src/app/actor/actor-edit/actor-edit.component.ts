@@ -4,9 +4,9 @@ import { actorCreateDTO } from '../actor';
 @Component({
   selector: 'app-actor-edit',
   templateUrl: './actor-edit.component.html',
-  styleUrls: ['./actor-edit.component.css']
+  styleUrls: ['./actor-edit.component.css'],
 })
 export class ActorEditComponent {
-  saveChanges(actor:actorCreateDTO){}
-
+  model: actorCreateDTO = { name: 'Pablo', birthDate: new Date() };
+  saveChanges(actor: actorCreateDTO) {}
 }
