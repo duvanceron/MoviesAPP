@@ -27,6 +27,7 @@ import { GenderEditComponent } from './gender/gender-edit/gender-edit.component'
 import { MoviesFilterComponent } from './movies/movies-filter/movies-filter.component';
 import { ActorFormComponent } from './actor/actor-form/actor-form.component';
 import { ErrorShowComponent } from './utilities/error-show/error-show.component';
+import { ActorEditComponent } from './actor/actor-edit/actor-edit.component';
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { ErrorShowComponent } from './utilities/error-show/error-show.component'
     MoviesFilterComponent,
     ActorFormComponent,
     ErrorShowComponent,
+    ActorEditComponent,
 
     
   ],

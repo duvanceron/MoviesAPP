@@ -18,5 +18,8 @@ export class ActorFormComponent implements OnInit {
       birthDate: '',
     });
   }
-  SaveChanges(){}
+  SaveChangesForm(){
+    console.log(this.form.value);
+    this.onSubmit.emit(this.form.value);
+  }
 }
