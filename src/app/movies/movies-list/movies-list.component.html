@@ -1,0 +1,28 @@
+<app-generic-list [list]="movies">
+  <ng-container content>
+    <div class="content">
+      <div fxLayout="row wrap">
+        <div fxFlex="25%" *ngFor="let item of movies; let i = index">
+          <mat-card class="mat-elevation-z4">
+            <mat-card-header>
+              <mat-card-title>Pelicula : {{ i }} {{ item.title }}
+              </mat-card-title>
+            </mat-card-header>
+            <img mat-card-image [src]="item.poster" alt="Poster" />
+            <mat-card-content>
+              <p>Release: {{ item.releaseDate | date }}</p>
+              <p>Price: {{ item.price | currency }}</p>
+              <app-rating></app-rating>
+            </mat-card-content>
+            <mat-card-actions>
+              <a href="" mat-flat-button color="primary">Edit</a>
+              <button mat-flat-button color="warn" type="button" (click)="Remove(i)">
+                Delete
+              </button>
+            </mat-card-actions>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</app-generic-list>

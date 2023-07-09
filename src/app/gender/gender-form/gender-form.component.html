@@ -1,0 +1,14 @@
+<app-error-show [errores] = "error" ></app-error-show>
+<form [formGroup]="form" (submit)="saveChanges()">
+  <mat-form-field appearance="outline">
+    <mat-label>Name*</mat-label>
+    <input formControlName="name" matInput />
+    <mat-error *ngIf="form.invalid">{{ getErrorField() }}</mat-error>
+  </mat-form-field>
+  <div>
+    <button mat-flat-button color="primary" [disabled]="form.invalid">
+      Save Changes
+    </button>
+    <a mat-stroked-button routerLink="/gender"> Cancel </a>
+  </div>
+</form>
