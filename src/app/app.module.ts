@@ -28,6 +28,7 @@ import { MoviesFilterComponent } from './movies/movies-filter/movies-filter.comp
 import { ActorFormComponent } from './actor/actor-form/actor-form.component';
 import { ErrorShowComponent } from './utilities/error-show/error-show.component';
 import { ActorEditComponent } from './actor/actor-edit/actor-edit.component';
+import { GenericImgComponent } from './utilities/generic-img/generic-img.component';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { ActorEditComponent } from './actor/actor-edit/actor-edit.component';
     ActorFormComponent,
     ErrorShowComponent,
     ActorEditComponent,
+    GenericImgComponent,
 
     
   ],
