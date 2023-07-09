@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { actorCreateDTO } from '../actor';
 
 @Component({
   selector: 'app-actor-form',
@@ -8,6 +9,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ActorFormComponent implements OnInit {
   form: FormGroup | any;
+  @Output()
+  onSubmit: EventEmitter<actorCreateDTO> = new EventEmitter<actorCreateDTO>(); 
   constructor(private formBuilder: FormBuilder) {}
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -15,5 +18,5 @@ export class ActorFormComponent implements OnInit {
       birthDate: '',
     });
   }
-  onSubmit(){}
+  SaveChanges(){}
 }
