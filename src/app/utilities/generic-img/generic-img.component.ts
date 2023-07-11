@@ -16,7 +16,7 @@ export class GenericImgComponent implements OnInit {
   viewChanges(event: any) {
     if (event.target.length > 0) {
       const file: File = event.target.files[0];
-      toBase64(file).then((value) => (this.imageBase64 = value));
+      toBase64(file).then((valueF) => this.imageBase64 = valueF).catch(error => console.log(error));
     }
   }
 }
