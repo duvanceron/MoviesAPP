@@ -12,6 +12,7 @@
     <mat-error>Fecha de nacimiento es requerido</mat-error>
   </mat-form-field>
   <app-generic-img [imageLoad]="model?.photo" (fileSelected)="fileSelected($event)"></app-generic-img>
+  <app-input-markdown></app-input-markdown>
   <div>
     <button mat-flat-button color="primary" [disabled]="form.invalid">
       Save Changes
