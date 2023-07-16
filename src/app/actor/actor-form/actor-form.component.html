@@ -1,4 +1,4 @@
-<form (submit)="SaveChangesForm()" [formGroup]="form">
+<form class="container" (submit)="SaveChangesForm()" [formGroup]="form">
   <mat-form-field appearance="outline">
     <mat-label>Name*</mat-label>
     <input formControlName="name" matInput />
@@ -11,7 +11,7 @@
     <mat-datepicker #picker></mat-datepicker>
     <mat-error>Fecha de nacimiento es requerido</mat-error>
   </mat-form-field>
-  <app-generic-img></app-generic-img>
+  <app-generic-img (fileSelected)="fileSelected($event)"></app-generic-img>
   <div>
     <button mat-flat-button color="primary" [disabled]="form.invalid">
       Save Changes

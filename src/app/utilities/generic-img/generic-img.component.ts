@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { toBase64 } from '../helper';
 import { __values } from 'tslib';
 
@@ -8,6 +8,8 @@ import { __values } from 'tslib';
   styleUrls: ['./generic-img.component.css'],
 })
 export class GenericImgComponent implements OnInit {
+  @Output() fileSelected: EventEmitter<File> = new EventEmitter<File>();
+
   imageBase64: string | any;
   ngOnInit(): void {
  
@@ -17,6 +19,7 @@ export class GenericImgComponent implements OnInit {
     if (event.target.files.length > 0) {
       const file: File = event.target.files[0];
       toBase64(file).then((valueF) => this.imageBase64 = valueF).catch(error => console.log(error));
+      this.fileSelected.emit(file);
     }
   }
 }

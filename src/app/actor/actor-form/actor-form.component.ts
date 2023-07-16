@@ -18,6 +18,7 @@ export class ActorFormComponent implements OnInit {
     this.form = this.formBuilder.group({
       name: ['', { validators: [Validators.required] }],
       birthDate: '',
+      photo:''
     });
     if (this.model != undefined) {
       this.form.patchValue(this.model);
@@ -26,5 +27,8 @@ export class ActorFormComponent implements OnInit {
   SaveChangesForm() {
     console.log(this.form.value);
     this.onSubmit.emit(this.form.value);
+  }
+  fileSelected(file:any){
+    this.form.get('photo').setvalue(file);  
   }
 }
