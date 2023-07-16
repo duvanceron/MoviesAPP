@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { actorCreateDTO } from '../actor';
+import { actorCreateDTO, actorDTO } from '../actor';
 
 @Component({
   selector: 'app-actor-form',
@@ -12,7 +12,7 @@ export class ActorFormComponent implements OnInit {
   @Output()
   onSubmit: EventEmitter<actorCreateDTO> = new EventEmitter<actorCreateDTO>();
   @Input()
-  model: actorCreateDTO | undefined;
+  model: actorDTO | undefined;
   constructor(private formBuilder: FormBuilder) {}
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -29,6 +29,6 @@ export class ActorFormComponent implements OnInit {
     this.onSubmit.emit(this.form.value);
   }
   fileSelected(file:any){
-    this.form.get('photo').setvalue(file);  
+    this.form.get('photo').setValue(file);  
   }
 }

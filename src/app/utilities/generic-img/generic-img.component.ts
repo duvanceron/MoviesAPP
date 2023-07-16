@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { toBase64 } from '../helper';
 import { __values } from 'tslib';
 
@@ -9,7 +9,8 @@ import { __values } from 'tslib';
 })
 export class GenericImgComponent implements OnInit {
   @Output() fileSelected: EventEmitter<File> = new EventEmitter<File>();
-
+  @Input()
+  imageLoad:string | any;
   imageBase64: string | any;
   ngOnInit(): void {
  
