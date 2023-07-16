@@ -21,6 +21,7 @@ export class GenericImgComponent implements OnInit {
       const file: File = event.target.files[0];
       toBase64(file).then((valueF) => this.imageBase64 = valueF).catch(error => console.log(error));
       this.fileSelected.emit(file);
+      this.imageLoad = null;
     }
   }
 }

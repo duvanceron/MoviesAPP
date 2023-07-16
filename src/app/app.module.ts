@@ -29,6 +29,7 @@ import { ActorFormComponent } from './actor/actor-form/actor-form.component';
 import { ErrorShowComponent } from './utilities/error-show/error-show.component';
 import { ActorEditComponent } from './actor/actor-edit/actor-edit.component';
 import { GenericImgComponent } from './utilities/generic-img/generic-img.component';
+import { InputMarkdownComponent } from './utilities/input-markdown/input-markdown.component';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { GenericImgComponent } from './utilities/generic-img/generic-img.compone
     ErrorShowComponent,
     ActorEditComponent,
     GenericImgComponent,
+    InputMarkdownComponent,
 
     
   ],
