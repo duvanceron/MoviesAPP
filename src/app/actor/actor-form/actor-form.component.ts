@@ -18,7 +18,8 @@ export class ActorFormComponent implements OnInit {
     this.form = this.formBuilder.group({
       name: ['', { validators: [Validators.required] }],
       birthDate: '',
-      photo:''
+      photo:'',
+      biography:'',
     });
     if (this.model != undefined) {
       this.form.patchValue(this.model);
@@ -30,5 +31,8 @@ export class ActorFormComponent implements OnInit {
   }
   fileSelected(file:any){
     this.form.get('photo').setValue(file);  
+  }
+  changeMarkDown(text:string){
+    this.form.get('biography').setValue(text);  
   }
 }

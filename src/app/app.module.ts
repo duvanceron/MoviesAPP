@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import{MarkdownModule} from 'ngx-markdown';
 
 import { MoviesListComponent } from './movies/movies-list/movies-list.component';
 import { GenericListComponent } from './utilities/generic-list/generic-list.component';
@@ -30,6 +31,7 @@ import { ErrorShowComponent } from './utilities/error-show/error-show.component'
 import { ActorEditComponent } from './actor/actor-edit/actor-edit.component';
 import { GenericImgComponent } from './utilities/generic-img/generic-img.component';
 import { InputMarkdownComponent } from './utilities/input-markdown/input-markdown.component';
+
 
 
 @NgModule({
@@ -65,7 +67,8 @@ import { InputMarkdownComponent } from './utilities/input-markdown/input-markdow
     MaterialModule,
     FlexLayoutModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MarkdownModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
