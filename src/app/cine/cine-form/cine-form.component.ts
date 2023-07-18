@@ -13,16 +13,18 @@ export class CineFormComponent implements OnInit {
   model: cineCreateDTO | undefined;
   @Output()
   modelChange: EventEmitter<cineCreateDTO> = new EventEmitter<cineCreateDTO>();
-  ngOnInit(): void {}
-  constructor(private formbuilder: FormBuilder) {
+  constructor(private formbuilder: FormBuilder) {}
+  ngOnInit(): void {
     this.form = this.formbuilder.group({
       name: ['', Validators.required],
       description: ['', Validators.required],
     });
-    if (this.model) {
+
+    if (this.model !== undefined) {
       this.form.patchValue(this.model);
     }
   }
+
   saveChanges() {
     this.modelChange.emit(this.form.value);
   }

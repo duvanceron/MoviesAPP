@@ -11,6 +11,7 @@ import { CineCreateComponent } from './cine/cine-create/cine-create.component';
 import { MoviesFilterComponent } from './movies/movies-filter/movies-filter.component';
 import { MovieCreateComponent } from './movies/movie-create/movie-create.component';
 import { ActorEditComponent } from './actor/actor-edit/actor-edit.component';
+import { CineEditComponent } from './cine/cine-edit/cine-edit.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
 
   { path: 'cine', component: CineIndexComponent },
   { path: 'cine/create', component: CineCreateComponent },
+  { path: 'cine/edit/:id', component: CineEditComponent },
 
   { path: 'movies/create', component: MovieCreateComponent },
   { path: 'movies/search', component: MoviesFilterComponent },
