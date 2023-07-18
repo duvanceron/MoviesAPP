@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { cineCreateDTO } from '../cine';
 
 @Component({
   selector: 'app-cine-form',
@@ -8,12 +9,21 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class CineFormComponent implements OnInit {
   form: any;
+  @Input()
+  model: cineCreateDTO | undefined;
+  @Output()
+  modelChange: EventEmitter<cineCreateDTO> = new EventEmitter<cineCreateDTO>();
   ngOnInit(): void {}
   constructor(private formbuilder: FormBuilder) {
     this.form = this.formbuilder.group({
       name: ['', Validators.required],
       description: ['', Validators.required],
     });
+    if (this.model) {
+      this.form.patchValue(this.model);
+    }
   }
-  saveChanges() {}
+  saveChanges() {
+    this.modelChange.emit(this.form.value);
+  }
 }

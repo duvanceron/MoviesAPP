@@ -32,6 +32,7 @@ import { ActorEditComponent } from './actor/actor-edit/actor-edit.component';
 import { GenericImgComponent } from './utilities/generic-img/generic-img.component';
 import { InputMarkdownComponent } from './utilities/input-markdown/input-markdown.component';
 import { CineFormComponent } from './cine/cine-form/cine-form.component';
+import { CineEditComponent } from './cine/cine-edit/cine-edit.component';
 
 
 
@@ -59,6 +60,7 @@ import { CineFormComponent } from './cine/cine-form/cine-form.component';
     GenericImgComponent,
     InputMarkdownComponent,
     CineFormComponent,
+    CineEditComponent,
 
     
   ],
