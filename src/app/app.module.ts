@@ -33,6 +33,8 @@ import { GenericImgComponent } from './utilities/generic-img/generic-img.compone
 import { InputMarkdownComponent } from './utilities/input-markdown/input-markdown.component';
 import { CineFormComponent } from './cine/cine-form/cine-form.component';
 import { CineEditComponent } from './cine/cine-edit/cine-edit.component';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { MapComponent } from './utilities/map/map.component';
 
 
 
@@ -61,6 +63,7 @@ import { CineEditComponent } from './cine/cine-edit/cine-edit.component';
     InputMarkdownComponent,
     CineFormComponent,
     CineEditComponent,
+    MapComponent,
 
     
   ],
@@ -73,6 +76,7 @@ import { CineEditComponent } from './cine/cine-edit/cine-edit.component';
     ReactiveFormsModule,
     HttpClientModule,
     MarkdownModule.forRoot(),
+    LeafletModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
