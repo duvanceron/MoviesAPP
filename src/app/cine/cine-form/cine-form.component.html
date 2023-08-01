@@ -4,6 +4,8 @@
     <input formControlName="name" matInput />
     <mat-error *ngIf="form.invalid">El nombre es requerido</mat-error>
   </mat-form-field>
+  <h4>Seleccionar el cine en el mapa</h4>
+  <app-map (coordinate)="coordinateSelected($event)"></app-map>
   <div>
     <button mat-flat-button color="primary" [disabled]="form.invalid">
       Save Changes

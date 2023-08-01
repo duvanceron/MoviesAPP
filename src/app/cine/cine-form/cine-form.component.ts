@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { cineCreateDTO } from '../cine';
+import { coordinate } from 'src/app/utilities/map/coordinate';
 
 @Component({
   selector: 'app-cine-form',
@@ -18,6 +19,8 @@ export class CineFormComponent implements OnInit {
     this.form = this.formbuilder.group({
       name: ['', Validators.required],
       description: ['', Validators.required],
+      latitude: ['', Validators.required],
+      longitude: ['', Validators.required]
     });
 
     if (this.model !== undefined) {
@@ -27,5 +30,8 @@ export class CineFormComponent implements OnInit {
 
   saveChanges() {
     this.modelChange.emit(this.form.value);
+  }
+  coordinateSelected(coordinate:coordinate){
+    this.form.patchValue(coordinate);
   }
 }
